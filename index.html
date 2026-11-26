@@ -97,8 +97,8 @@
   .slide table { background: #fff; }
 
   /* shot-frame */
-  .slide.shot { position: relative; padding: 0; background: #fff; overflow: hidden; }
-  .slide.shot .frame { position: relative; line-height: 0; }
+  .slide.shot { position: relative; padding: 0; background: #fff; }
+  .slide.shot .frame { position: relative; line-height: 0; overflow: hidden; }
   .slide.shot .frame img { width: 100%; height: auto; display: block; }
   .slide.shot .frame .box { position: absolute; border-radius: 1.5px; pointer-events: none; }
   .slide.shot .frame .box.hot {
@@ -327,7 +327,7 @@
   }
 
   /* 슬라이드 화면 + 그 화면의 글 나란히 */
-  .slide.shot { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 2mm 3.2mm; align-items: start; padding: 2mm 2.4mm; }
+  .slide.shot { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); gap: 2mm 3.2mm; align-items: start; padding: 2mm 2.4mm; overflow: visible; }
   .slide.shot .frame { grid-column: 1; }
   .slide.shot .txt {
     grid-column: 2; font-size: 8.3pt; line-height: 1.5; color: #16325c;
