@@ -70,7 +70,7 @@
 
   .pair {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
     gap: 5mm 8mm;
     align-items: start;
     margin: 0 0 8mm;
@@ -333,6 +333,36 @@
     position: absolute; left: 0; top: 0; width: 1px; height: 1px; margin: 0; padding: 0;
     overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; opacity: 0; pointer-events: none;
   }
+  .slide.shot .frame { width: max-content; max-width: 100%; }
+  .slide.shot .frame img { width: auto; max-width: 100%; height: auto; image-rendering: auto; }
+  .slide-zoom-trigger {
+    position: absolute; z-index: 2; top: 8px; right: 8px;
+    padding: 6px 10px; border: 1px solid rgba(255,255,255,.55); border-radius: 6px;
+    color: #fff; background: rgba(16,40,77,.9); font: 600 13px/1.2 sans-serif; cursor: zoom-in;
+  }
+  .slide-zoom {
+    width: min(96vw, 1800px); max-width: 96vw; height: min(92vh, 1200px); max-height: 92vh;
+    padding: 0; border: 0; border-radius: 10px; color: #fff; background: #10141a; overflow: hidden;
+  }
+  .slide-zoom::backdrop { background: rgba(0,0,0,.84); }
+  .slide-zoom-toolbar {
+    height: 48px; display: flex; align-items: center; justify-content: flex-end; gap: 8px;
+    padding: 6px 10px; background: #1b2430; font: 14px/1.2 sans-serif;
+  }
+  .slide-zoom-toolbar button {
+    min-width: 40px; padding: 6px 10px; border: 1px solid #536173; border-radius: 5px;
+    color: #fff; background: #2b394b; font: inherit; cursor: pointer;
+  }
+  .slide-zoom-toolbar button:focus-visible, .slide-zoom-trigger:focus-visible { outline: 3px solid #ffcc55; outline-offset: 2px; }
+  .slide-zoom-scale { min-width: 4em; text-align: center; }
+  .slide-zoom-viewport { width: 100%; height: calc(92vh - 48px); overflow: auto; background: #080b10; }
+  .slide-zoom-image { display: block; max-width: none !important; height: auto; }
+  @media (max-width: 760px) {
+    .pair { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+    .slide-zoom { width: 96vw; height: 92vh; }
+    .slide-zoom-viewport { height: calc(92vh - 48px); }
+  }
+  @media print { .slide-zoom-trigger, .slide-zoom { display: none !important; } }
 </style>
 </head>
 <body>
@@ -414,7 +444,7 @@
 </div>
 </section>
 <section class="pair">
-<div class="slide shot"><div class="frame"><img src="슬라이드/01/01_01-178.5.webp" alt="Vrediabetes" width="699" height="544" decoding="async"></div><div class="sr"><h3>Vrediabetes</h3><p>01 당뇨병의 분류</p><p>당뇨병전단계 인구 (2021-2022년 통합)</p><p>전체 (30세 이상)</p><p>30세 성인에서 당뇨병전단계 인구는 1,400만 명으로 추정됨</p><p>30대에서 50대까지 증가했다가 이후 감소하는 양상을 보이며,</p><p>30대 성인은 190만 명이 당뇨병전단계에 해당함.</p><p>30대에서 50대까지는 남성이 많고 60대이후는 여성이 더 않음!</p><p>당뇨병전단계: 당뇨병이 아니면서 공복혈당이 100-125 mgidL 또는 당화혈색소 5.7-6.4%인 경우</p><p>DIABETES FACT SHEET IN KOREA 2024</p></div></div>
+<div class="slide shot"><div class="frame"><img src="슬라이드/01/01_01-178.5.webp" alt="Prediabetes" width="699" height="544" decoding="async"></div><div class="sr"><h3>Prediabetes</h3><p>01 당뇨병의 분류</p><p>당뇨병전단계 인구 (2021-2022년 통합)</p><p>전체 (30세 이상)</p><p>30세 성인에서 당뇨병전단계 인구는 1,400만 명으로 추정됨</p><p>30대에서 50대까지 증가했다가 이후 감소하는 양상을 보이며,</p><p>30대 성인은 190만 명이 당뇨병전단계에 해당함.</p><p>30대에서 50대까지는 남성이 많고 60대 이후는 여성이 더 많음.</p><p>당뇨병전단계: 당뇨병이 아니면서 공복혈당이 100-125 mgidL 또는 당화혈색소 5.7-6.4%인 경우</p><p>DIABETES FACT SHEET IN KOREA 2024</p></div></div>
 <div class="talk">
 <p><span data-hl="u01p004s0">그렇다면 당뇨병 전 단계, 우리가 당뇨병 전단계라고 부르죠.</span> <span data-hl="u01p004s1">당뇨병 전 단계인 당뇨병 전단계는 어느 정도인가 하는 것인데요.</span> <span data-hl="u01p004s2">당뇨병보다 훨씬 더 많습니다.</span></p>
 <p><span data-hl="u01p004s3">그래서 대략 1,400만 명 정도 되고요.</span> <span data-hl="u01p004s4">30세 이상 성인입니다.</span> <span data-hl="u01p004s5">30세 이상 성인을 분모로 했을 때 대략 40% 정도에 해당하는 사람들이 당뇨병 전 단계, 즉 당뇨병 전단계에 있다는 것을 알 수 있습니다.</span></p>
@@ -423,7 +453,7 @@
 </div>
 </section>
 <section class="pair">
-<div class="slide shot"><div class="frame"><img src="슬라이드/01/01_01-55.6.webp" alt="당뇨병 인구 (2021-2022년 통합)" width="692" height="544" decoding="async"></div><div class="sr"><h3>당뇨병 인구 (2021-2022년 통합)</h3><p>전체 (30세 이상)</p><p>30세 이상 성인 중 당뇨병을 가진 사람은 533만 명이며.</p><p>30대는 21만 명, 40대는 66만 명이 당뇨병환자임,</p><p>당뇨병 진단기준 : 4개 경우 중 하나 이상에 해당되는 경우 ① 의사로부터 당뇨병을 진단받은 경우 당뇨병약제로 치료 중인 경우</p><p>공복힐당이 126 mg/oL 이상인 경우 당화혈색소가 6.5% 이상인 경우</p></div></div>
+<div class="slide shot"><div class="frame"><img src="슬라이드/01/01_01-55.6.webp" alt="당뇨병 인구 (2021-2022년 통합)" width="692" height="544" decoding="async"></div><div class="sr"><h3>당뇨병 인구 (2021-2022년 통합)</h3><p>전체 (30세 이상)</p><p>30세 이상 성인 중 당뇨병을 가진 사람은 533만 명이며.</p><p>30대는 21만 명, 40대는 66만 명이 당뇨병환자임,</p><p>당뇨병 진단기준 : 4개 경우 중 하나 이상에 해당되는 경우 ① 의사로부터 당뇨병을 진단받은 경우 당뇨병약제로 치료 중인 경우</p><p>공복혈당이 126 mg/oL 이상인 경우 당화혈색소가 6.5% 이상인 경우</p></div></div>
 <div class="talk">
 <p><span data-hl="u01p005s0">당뇨병의 분류에 들어가기 전에 일단 당뇨병에 대해서 간략히 알아보고자 하는데요.</span> <span data-hl="u01p005s1">우리나라에 당뇨병이 굉장히 많습니다.</span> <span data-hl="u01p005s2">주변을 보시면 가족 중에 당뇨병 환자가 있을 수도 있고 지인 중에도 당뇨병 환자가 있을 수 있을 겁니다.</span></p>
 <p><span data-hl="u01p005s3">그렇게 흔한 것은 정말 유병률이 높다는 걸 이야기할 텐데요.</span> <span data-hl="u01p005s4">대한당뇨병학회에서 발표한 Diabetes Fact Sheet 2024년 자료를 보게 되면 2021년과 2022년의 자료를 통합해서 분석했을 때 우리나라 30세 이상 성인에서 533만 명의 당뇨병 환자가 있음을 알 수가 있습니다.</span> <span data-hl="u01p005s5">대략 15.5%에 해당되는 숫자가 되겠습니다.</span></p>
@@ -1202,7 +1232,7 @@
 </div>>
 </section>
 <section class="pair">
-<div class="slide shot"><div class="frame"><img src="슬라이드/02/02_02-49.6.webp" alt="DKA" width="970" height="546" decoding="async"><span class="box" data-hl="u02p022s0" style="left:3.42%;top:11.12%;width:73.15%;height:6.55%"></span><span class="box" data-hl="u02p022s1" style="left:6.42%;top:67.33%;width:75.15%;height:7.15%"></span><span class="box" data-hl="u02p022s2" style="left:3.42%;top:26.12%;width:25.15%;height:5.35%"></span></div><div class="sr"><h3>DKA</h3><p>02 Hyperglycemic hyperosmolar state</p><p>Marked hyperglycemia (serum glucose &gt; 600mg/dl)</p><p>Hyperosmolarity (serum&gt; 350m0sm/L)</p><p>Arterial pH &gt; 7.3</p><p>A. DKA Diagnostic Criteria</p><p>Diabetes/hyperglycemia</p><p>Glucose 2200 mg/dL (11.1 mmol/L) OR prior history of dlabetes</p><p>B-Hydroxybutyrate concentration 23.0 mmo/L OR urine ketone strip 2+ or greater</p><p>Metabolic Acidosis</p><p>pH &lt;7.3 and/or bicarbonate concentration &lt;18 mmol/L</p><p>B. HHs Olagnostic Critera</p><p>Hyperglycemia</p><p>Plasma glucose 2600 mg/dL (33.3 mmol/L)</p><p>Calculated ettective serum osmolality &gt;300 mosm/kg (calculated as [2xNa*</p><p>Hyperosmolarity</p><p>(mmol/L) + glucose (mmol/L)]), OR total serum osmolality &gt;320 mOsm/kg [(2xNa+</p><p>(mmolL) + glucose (mmol/L) + urea (mmo/L)]</p><p>Ab Sence of significant ketonemia</p><p>B-Hydroxybutyrate concentration &lt;3.0 mmol/L OR urine ketone strip less than 2+</p><p>Absence of acidosis</p><p>pH 27.3 and bicarbonate concentration 215 mmo/L</p><p>출처 : Dlabetes Care 2024:47(8):1257-1275</p></div></div>
+<div class="slide shot"><div class="frame"><img src="슬라이드/02/02_02-49.6.webp" alt="DKA" width="970" height="546" decoding="async"><span class="box" data-hl="u02p022s0" style="left:3.42%;top:11.12%;width:73.15%;height:6.55%"></span><span class="box" data-hl="u02p022s1" style="left:6.42%;top:67.33%;width:75.15%;height:7.15%"></span><span class="box" data-hl="u02p022s2" style="left:3.42%;top:26.12%;width:25.15%;height:5.35%"></span></div><div class="sr"><h3>DKA</h3><p>02 Hyperglycemic hyperosmolar state</p><p>Marked hyperglycemia (serum glucose &gt; 600mg/dl)</p><p>Hyperosmolarity (serum&gt; 350mOsm/L)</p><p>Arterial pH &gt; 7.3</p><p>A. DKA Diagnostic Criteria</p><p>Diabetes/hyperglycemia</p><p>Glucose 2200 mg/dL (11.1 mmol/L) OR prior history of dlabetes</p><p>B-Hydroxybutyrate concentration 23.0 mmo/L OR urine ketone strip 2+ or greater</p><p>Metabolic Acidosis</p><p>pH &lt;7.3 and/or bicarbonate concentration &lt;18 mmol/L</p><p>B. HHs Olagnostic Critera</p><p>Hyperglycemia</p><p>Plasma glucose 2600 mg/dL (33.3 mmol/L)</p><p>Calculated ettective serum osmolality &gt;300 mosm/kg (calculated as [2xNa*</p><p>Hyperosmolarity</p><p>(mmol/L) + glucose (mmol/L)]), OR total serum osmolality &gt;320 mOsm/kg [(2xNa+</p><p>(mmolL) + glucose (mmol/L) + urea (mmo/L)]</p><p>Ab Sence of significant ketonemia</p><p>B-Hydroxybutyrate concentration &lt;3.0 mmol/L OR urine ketone strip less than 2+</p><p>Absence of acidosis</p><p>pH 27.3 and bicarbonate concentration 215 mmo/L</p><p>출처 : Dlabetes Care 2024:47(8):1257-1275</p></div></div>
 <div class="talk">
 <p>케톤증과 산증이 뚜렷하면 DKA입니다. HHS는 케톤이 거의 없고 산증도 심하지 않습니다. <span data-hl="u02p022s0">혈당은 600mg/dL을 넘을 정도로 높고</span> <span data-hl="u02p022s1">유효 삼투압은 300mOsm/kg을 넘습니다.</span> 이때는 탈수가 중심이고, 수분 부족이 DKA보다 훨씬 심합니다. <span data-hl="u02p022s2">동맥혈 pH는 7.3보다 높습니다.</span></p>
 </div>>
@@ -1361,7 +1391,7 @@
 </div>
 </section>
 <section class="pair">
-<div class="slide shot"><div class="frame"><img src="슬라이드/02/02_02-24.5.webp" alt="DKA" width="970" height="546" decoding="async"><span class="box" data-hl="tu02p045s0" style="left:12.18%;top:46.85%;width:5.75%;height:4.83%"></span><span class="box" data-hl="tu02p045s2" style="left:7.85%;top:69.93%;width:3.27%;height:8.13%"></span><span class="box" data-hl="#8" style="left:12.18%;top:46.85%;width:5.75%;height:4.83%"></span></div><div class="sr"><h3>DKA</h3><p>02 Hyperglycemic hyperosmolar state</p><p>Marked hyperglycemia (serum glucose &gt; 600mg/dl)</p><p>Hyperosmolarity (serum&gt; 350m0sm/L)</p><p>Arterial pH&gt; 7.3</p><p>A. DKA Diagnostic Criteria</p><p>Diabetes/hyperglycemia</p><p>Glucose 2200 mg/dL (11.1 mmol/L) OR prior history of dlabetes</p><p>Ketosis</p><p>B-Hydroxybutyrate concentration 23.0 mmolL OR urine ketone strip 2+ or greater</p><p>Metabolic Acidosis</p><p>pH &lt;7.3 and/or bicarbonate concentration &lt;18 mmol/L</p><p>B HHS Diagnostic Critera</p><p>Hyperglycemia</p><p>Plasma glucose 2600 mg/dL (33.3 mmol/L)</p><p>Calculated ettective serum osmolality &gt;300 m0sm/kg (calculated as [2xNa*</p><p>Hyperosmolarity</p><p>(mmol/L) + glucose (mmol/L)]), OR total serum osmolality &gt;320 mOsm/kg [(2xNa+</p><p>(mmolL) + glucose (mmol/L) + urea (mmo/L)]</p><p>AbSence of significant ketonemia</p><p>B-Hydroxybutyrate concentration &lt;3.0 mmol/L OR urine ketone strip less than 2+</p><p>Absence of acidosis</p><p>pH 27.3 and bicarbonate concentration 215 mmo/L</p><p>출처 : Dlabetes Care 2024:47(8):1257-1275</p></div></div>
+<div class="slide shot"><div class="frame"><img src="슬라이드/02/02_02-24.5.webp" alt="DKA" width="970" height="546" decoding="async"><span class="box" data-hl="tu02p045s0" style="left:12.18%;top:46.85%;width:5.75%;height:4.83%"></span><span class="box" data-hl="tu02p045s2" style="left:7.85%;top:69.93%;width:3.27%;height:8.13%"></span><span class="box" data-hl="#8" style="left:12.18%;top:46.85%;width:5.75%;height:4.83%"></span></div><div class="sr"><h3>DKA</h3><p>02 Hyperglycemic hyperosmolar state</p><p>Marked hyperglycemia (serum glucose &gt; 600mg/dl)</p><p>Hyperosmolarity (serum&gt; 350mOsm/L)</p><p>Arterial pH&gt; 7.3</p><p>A. DKA Diagnostic Criteria</p><p>Diabetes/hyperglycemia</p><p>Glucose 2200 mg/dL (11.1 mmol/L) OR prior history of dlabetes</p><p>Ketosis</p><p>B-Hydroxybutyrate concentration 23.0 mmolL OR urine ketone strip 2+ or greater</p><p>Metabolic Acidosis</p><p>pH &lt;7.3 and/or bicarbonate concentration &lt;18 mmol/L</p><p>B HHS Diagnostic Critera</p><p>Hyperglycemia</p><p>Plasma glucose 2600 mg/dL (33.3 mmol/L)</p><p>Calculated ettective serum osmolality &gt;300 mOsm/kg (calculated as [2xNa*</p><p>Hyperosmolarity</p><p>(mmol/L) + glucose (mmol/L)]), OR total serum osmolality &gt;320 mOsm/kg [(2xNa+</p><p>(mmolL) + glucose (mmol/L) + urea (mmo/L)]</p><p>AbSence of significant ketonemia</p><p>B-Hydroxybutyrate concentration &lt;3.0 mmol/L OR urine ketone strip less than 2+</p><p>Absence of acidosis</p><p>pH 27.3 and bicarbonate concentration 215 mmo/L</p><p>출처 : Dlabetes Care 2024:47(8):1257-1275</p></div></div>
 <div class="talk">
 <p><span data-hl="tu02p045s0">자 이제 두 번째 강의를 할 건데요.</span> <span data-hl="tu02p045s1">사실은 첫 번째 강의를 잘 들으셨다면 두 번째 강의는 사실상 반복입니다.</span> <span data-hl="tu02p045s2">하이퍼글라이세믹, 하이퍼오스몰라스테이투스, HHS라고 흔히 얘기하는 그건데 이 슬라이드 아까도 보신 슬라이드잖아요.</span></p>
 <p><span data-hl="#8">dka 와 hhs 의 차이, ketone, acidosis 이 두가지, ketosis 와 acidosis 가 아주 도미넌트하게 나타나면 dka 다 이렇게 얘기하고요</span></p>
@@ -7018,7 +7048,7 @@
 <p data-hl="6-x1-b9">담뇨명상 탈초신건들</p>
 <p data-hl="6-x1-b10">중시: Adapted from Sloan G et al, 2021, Nature reviews endocrinology</p>
 </div></div>
-<div class="talk"><p><span data-hl="t06p025s0">우리가 고혈당만으로 봤을 때 고혈당이 어떻게 당뇨병에서 말초신경증을 일으키느냐 하는 기전도 상당히 복잡한데 가장 대표적인 것은 폴리올 파트웨이의 활성화입니다 그로 인해서 세포 내 소비톨이라고 하는 분자물질이 증가하게 되고요 이것은 삼토압 스트레스나 산화 스트레스를 일으키고 이것들이 직접 신경세포를 손상시키기도 하지만 혈관의 뇌피세포를 손상시키고 그로 인해서 혈류를 감소시키고 그로 인한 저산소성 손상이 신경세포 손상을 가속화하는 것으로 되어 있고요.</span></p>
+<div class="talk"><p><span data-hl="t06p025s0">우리가 고혈당만으로 봤을 때 고혈당이 어떻게 당뇨병에서 말초신경증을 일으키느냐 하는 기전도 상당히 복잡한데 가장 대표적인 것은 폴리올 파트웨이의 활성화입니다 그로 인해서 세포 내 소비톨이라고 하는 분자물질이 증가하게 되고요 이것은 삼투압 스트레스나 산화 스트레스를 일으키고 이것들이 직접 신경세포를 손상시키기도 하지만 혈관의 뇌피세포를 손상시키고 그로 인해서 혈류를 감소시키고 그로 인한 저산소성 손상이 신경세포 손상을 가속화하는 것으로 되어 있고요.</span></p>
 <p><span data-hl="t06p025s1">또 고혈당이 있을 때 미토콘드리아의 기능 이상에 의해서 활성산소가 증가하기 때문에 이로 인한 산화성 스트레스, 그로 인한 신경세포 손상과 뇌피세포 손상이 이어지도록 되어 있고 또 혈당이 높으면 지질이나 단백질의 당화 반응을 통해서 우리가 Advanced Glycation End Product, AGE라고 하는 것이 축적이 되게 됩니다.</span> <span data-hl="t06p025s2">이것이 산화 스트레스나 염증을 일으키는 것으로 되어 있고 이것이 뇌피세포 손상과 신경세포 손상을 통해서 당뇨편성 말초신경증을 일으키는 데 관여하는 것으로 알려져 있습니다.</span> <span data-hl="t06p025s3">그 외에도 신경섬유가 퇴축되었을 때 그것들을 재생하려는 그러한 보상기전이 있겠는데요.</span></p>
 <p><span data-hl="6-x1-t">이 신경성장인자, 너브그로스 팩터가 당뇨병성 말초신경증의 환자의 경우에 감소하는 것으로 알려져 있고 이것이 신경재생이나 생존을 방해하는 것을 통해서 당뇨병성 말초신경증의 발생과 진행에 관여하는 것으로 알려져 있습니다 이러한 병리기전에 기반해서 여러 가지 치료제를 개발하려는 노력들이 있었는데요 이 폴리올 패트웨이의 활성화와 관련해서 가장 대표적인 치료제 개발 노력이 알도스 리덕테이즈 억제제입니다.</span> <span data-hl="t06p025s5">알도스 리덕테이즈를 통해서 소비톨이 합성이 되기 때문에 이 과정을 억제해서 소비톨의 증가를 막아보겠다는 것이었는데 안타깝게도 임상시험을 통해서 그 효과를 입증하는 데는 실패했습니다.</span></p>
 <p><span data-hl="t06p025s6">그 외에 산화 스트레스를 타겟으로 하는 치료제들이 있습니다.</span> <span data-hl="t06p025s7">대개 항산화제인데요.</span> <span data-hl="t06p025s8">임상에서는 알파 라이포익 에시드나 감마 리노레닉 에시드가 이러한 치료 기전을 통해서 임상에서 사용이 되고 있습니다.</span></p>
@@ -22064,7 +22094,7 @@
 <ul><li data-hl="18-62-b0">06 뇌하수체 기능저하증</li><li data-hl="18-62-b1">주소:다음, 다뇨, 이차 성징의 소실</li><li data-hl="18-62-b2">현병력 : 평소 하루에 4-5L 정도의 다음과 다뇨 증상이 있었으나 그냥 지내 오던 중 검사를 위해 내원.</li><li data-hl="18-62-b3">3세때 결핵성 뇌막염으로 1년간 결핵약 (ISoniazide, streptomycin 포함한 삼제 요법) 복용.</li><li data-hl="18-62-b4">신체 검사 : 신장 154 cm(3 percentile미만, height age 13.5세), 상지 71cm, 하지 94cm(상하지 비: 0.75), 체중 43.45</li></ul>
 <p data-hl="18-62-b5">kg, BMI 18.3 Kg/m2, 고환과 음낭의 위축, 액모 및 치모가 없었다(Tanner stage I).</p>
 <ul><li data-hl="18-62-b6">검사실 소견 :</li></ul>
-<ul><li data-hl="18-62-b7">Na/K 136/4.3mEq/dL, serum Osm 285m0sm/Kg, urine S.G 1.005</li></ul>
+<ul><li data-hl="18-62-b7">Na/K 136/4.3mEq/dL, serum Osm 285mOsm/kg, urine S.G 1.005</li></ul>
 <p data-hl="18-62-b8">T3: 128 ng/dL, T4: 6.45 ug/dL, TSH: 2.8</p>
 <p data-hl="18-62-b9">uU/mL, Testosterone &lt;0.04 ng/mL, IGF-1: 177.76 ng/mL</p>
 <p data-hl="18-62-b10">62/157</p>
@@ -22387,7 +22417,7 @@
 <section class="pair">
 <div class="slide shot"><div class="frame"><img src="슬라이드/18/p079.webp" alt="진단: 수분제한검사" width="1595" height="895" decoding="async"><span class="box" data-hl="18-79-t" style="left:2.07%;top:10.98%;width:19.55%;height:4.96%"></span></div><div class="sr">
 <h3 data-hl="18-79-t">진단: 수분제한검사</h3>
-<ul><li data-hl="18-79-b0">07 뇌하수체 후엽 질환 - 요붕증</li><li data-hl="18-79-b1">수분제한이 소변 농축능에 미치는 영향을 평가하는 검사.</li><li data-hl="18-79-b2">오전 6시부터 금식 후 체중 측정, 체중 측정 후 수분 섭취 제한. 이때 완전히 금식 시킬 필요는 없고 검사 중에는 수분이 없는 음식은</li><li data-hl="18-79-b3">섭취하도록 한다.</li><li data-hl="18-79-b4">매시간 소변을 채취하여 요비중, 요삼투압, 체중 측정.</li><li data-hl="18-79-b5">연속 2회의 소변 삼투압 차가 30m0sm/kg 이하일 때까지 검사를 계속하고 이 때의 혈장 삼투압과 체중을 측정, 체중이 3%이상</li><li data-hl="18-79-b6">감소하면 검사 중지한다.</li></ul>
+<ul><li data-hl="18-79-b0">07 뇌하수체 후엽 질환 - 요붕증</li><li data-hl="18-79-b1">수분제한이 소변 농축능에 미치는 영향을 평가하는 검사.</li><li data-hl="18-79-b2">오전 6시부터 금식 후 체중 측정, 체중 측정 후 수분 섭취 제한. 이때 완전히 금식 시킬 필요는 없고 검사 중에는 수분이 없는 음식은</li><li data-hl="18-79-b3">섭취하도록 한다.</li><li data-hl="18-79-b4">매시간 소변을 채취하여 요비중, 요삼투압, 체중 측정.</li><li data-hl="18-79-b5">연속 2회의 소변 삼투압 차가 30mOsm/kg 이하일 때까지 검사를 계속하고 이 때의 혈장 삼투압과 체중을 측정, 체중이 3%이상</li><li data-hl="18-79-b6">감소하면 검사 중지한다.</li></ul>
 <p data-hl="18-79-b7">✓ 5u의 aqueous vasopressin을 투여하고 1시간 뒤에 요비중을 측정한다. 만일 중추성 요붕증의 경우에는 주사 후 요삼투압이</p>
 <p data-hl="18-79-b8">급격히 상승된다.</p>
 <p data-hl="18-79-b9">✓ dDAVP</p>
@@ -22619,7 +22649,7 @@
 <p data-hl="18-90-b4">〉 Euvolemia</p>
 <ul><li data-hl="18-90-b5">기립성 저혈압, 빈맥, decreased skin turgor 등의 hypovolemia 증후 없음</li><li data-hl="18-90-b6">피하부종, 복수 등의 hypervolemia 증후 없음</li><li data-hl="18-90-b7">저나트륨혈증에 의한 증상</li><li data-hl="18-90-b8">130-135 meq/L - 식욕부전, 오심, 구토</li><li data-hl="18-90-b9">&lt; 125 meq/L 또는 나트륨 저하 속도가 빠를 경우 - 의식소실</li></ul>
 <h4 data-hl="18-90-b10">진단</h4>
-<ul><li data-hl="18-90-b11">Decreased plasma osmolality of the ECF(pOsm &lt;280 m0sm/kg H20)</li><li data-hl="18-90-b12">inappropriate urinary concentration during hypo-osmolality(uosm &gt;100 mosm/kg H20, normal renal function)</li><li data-hl="18-90-b13">Clinical euvolemia</li><li data-hl="18-90-b14">Elevated urinary sodium excretion (&gt;30 mmol/L) on normal salt &amp; water intake</li><li data-hl="18-90-b15">Absence of other potential causes of euvolemic hypo-osmolality, [ hypothyroidism, hypocortisolism,&amp;</li></ul>
+<ul><li data-hl="18-90-b11">Decreased plasma osmolality of the ECF(pOsm &lt;280 mOsm/kg H20)</li><li data-hl="18-90-b12">inappropriate urinary concentration during hypo-osmolality(uosm &gt;100 mosm/kg H20, normal renal function)</li><li data-hl="18-90-b13">Clinical euvolemia</li><li data-hl="18-90-b14">Elevated urinary sodium excretion (&gt;30 mmol/L) on normal salt &amp; water intake</li><li data-hl="18-90-b15">Absence of other potential causes of euvolemic hypo-osmolality, [ hypothyroidism, hypocortisolism,&amp;</li></ul>
 <p data-hl="18-90-b16">diuretic use]</p>
 <p data-hl="18-90-b17">90/157</p>
 </div></div>
@@ -25953,5 +25983,6 @@
 
 
 </script>
+<script src="slide-zoom.js"></script>
 </body>
 </html>
